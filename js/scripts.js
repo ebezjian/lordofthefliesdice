@@ -4,10 +4,8 @@
 //Business Logic
 
 function Player() {
- 
   this.totalScore = 0;
   this.roundScore = 0;
-  this.turn = false;
   this.dice = 0; 
   this.hold = false;
 }
@@ -15,14 +13,14 @@ function Player() {
 let playerOne = new Player();
 let playerTwo = new Player();
 
-playerOne.turn = true;
+let isPlayerOne = true;
 
 Player.prototype.diceRoll = function () {
   this.dice = Math.floor(Math.random() * 6) + 1;
   if (this.dice === 1) {
-    console.log("your turn is over");
+    console.log("Your turn is over");
     this.roundScore = 0;
-    this.turn = false;
+    isPlayerOne = !isPlayerOne;
   } else if (this.dice !==1 && this.hold === false) {
     this.roundScore += this.dice;
     return;
@@ -33,17 +31,16 @@ Player.prototype.holdDice = function () {
   if (this.hold === true) {
     this.totalScore += this.roundScore;
     this.roundScore = 0;
-    this.turn === false;
-    playerTwo.turn === true;
+    isPlayerOne = !isPlayerOne;
     return;
   }
 }
 
-Player.prototype.playerTurn = function () {
-  if (playerOne.turn === true) {
-  playerTwo.turn = false;
-  } else if (playerTwo.turn === true) {
-  playerOne.turn = false;
+function turnTest() {
+  if (isPlayerOne == true) {
+    playerOne.diceRoll();
+  } else {
+    playerTwo.diceRoll();
   }
 }
 

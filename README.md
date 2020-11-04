@@ -7,6 +7,7 @@
 | Should allow player to keep rolling and adding to score unless they roll 1 or hold | |  |
 | be able to select hold to keep current score |playerOne.hold = true | totalScore="3" roundScore=0|
 
+
 | have two scores set to zero| this.dice = 0;  | 0 |
 
 | recognize dice one and dice two|  |  |
