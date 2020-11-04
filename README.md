@@ -1,7 +1,12 @@
 | Behavior                                                        | Input     | Output    |
 | --------------------------------------------------------------- | --------- | --------- |
+
+| should correctly add name to player 1 and player 2| playerOne.name = "bob"; | "bob" |
+| only numbers 1-6 can be outputted at random| playerOne.diceRoll()| random number appears between 1-6  |
+
+
 | recognize dice one and dice two|  |  |
-| only numbers 1-6 can be outputted at random| |  |
+
 | if player hits 1 then score is reset to zero but game doesn't end | |  |
 | have two scores set to zero| |  |
 | have a score max of 100 | |  |
@@ -11,5 +16,4 @@
 | keep track of players round score | |  |
 | be able to select hold to keep current score | |  |
 | be able to select roll to keep rolling and adding to score unless hit 1| |  |
-| player 1 and player 2 are recognized| playerOne.name = "bob"; | "bob" |
 | changing turns| |  |
