@@ -3,15 +3,16 @@
 
 //Business Logic
 
-function Player() {
+function Player(name) {
+  this.name = name;
   this.totalScore = 0;
   this.roundScore = 0;
   this.dice = 0; 
   this.hold = false;
 }
 
-let playerOne = new Player();
-let playerTwo = new Player();
+let playerOne = new Player("Player 1");
+let playerTwo = new Player("Player 2");
 
 let isPlayerOne = true;
 
@@ -23,6 +24,9 @@ Player.prototype.diceRoll = function () {
     isPlayerOne = !isPlayerOne;
   } else if (this.dice !==1 && this.hold === false) {
     this.roundScore += this.dice;
+    if(this.totalScore + this.roundScore >= 100) {
+      declareWinner(this.name);
+    }
     return;
   }
 }
@@ -44,11 +48,21 @@ function turnTest() {
   }
 }
 
+// UI Logic
 
-hold button 
-listener 
-turn is over 
-boolean switches
+function declareWinner(element) {
+  console.log(element + " wins");
+}
 
+
+$(document).ready(function() {
+  $("button#roll").click(function(event) {
+    event.preventDefault();
+    console.log("hello");
+    turnTest();
+    $(".player1score").text(playerOne.roundScore, playerOne.totalScore);
+    $(".player2score").text(playerTwo.roundScore, playerTwo.totalScore);
+  });
+});
 
 //listener boolean hold to true
