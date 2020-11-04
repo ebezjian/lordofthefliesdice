@@ -14,16 +14,17 @@ function Player(name) {
 let playerOne = new Player();
 let playerTwo = new Player();
 
-Player.prototype.diceRoll = function () {
-this.dice = Math.floor(Math.random() * 6) + 1;
-console.log(this.dice);
-}
-// if (dice ===1 )
-// return false;
-// else if (dice !== 1)
-// return roundScores
 
-// player 1's turn
-// either roll or hold
-// if roll 1, set playerTwo turn to true
-// then proceed to allow playerTwo to play
+Player.prototype.diceRoll = function () {
+  this.dice = Math.floor(Math.random() * 6) + 1;
+  if (this.dice === 1) {
+    console.log("your turn is over");
+    return false;
+  } else if (this.dice !==1) {
+    this.roundScore += this.dice;
+  }
+}
+
+
+
+//listener boolean hold to true
