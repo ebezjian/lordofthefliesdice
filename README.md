@@ -11,3 +11,5 @@
 | keep track of players round score | |  |
 | be able to select hold to keep current score | |  |
 | be able to select roll to keep rolling and adding to score unless hit 1| |  |
+| player 1 and player 2 are recognized| playerOne.name = "bob"; | "bob" |
+| changing turns| |  |
