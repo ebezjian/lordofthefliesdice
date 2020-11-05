@@ -12,15 +12,30 @@
 </head>
 <body>
   <div class="container">
-    <button type="submit" id="roll">Roll the dice</button>
-    <button type="submit" id="hold">hold what you got</button>
-    <div>
-      <h1 class="player1total">Player One Total</h1>
-      <h1 class="player1round">Player One Round</h1>
-      
-      <h1 class="player2total">Player Two Total</h1>
-      <h1 class="player2round">Player Two Round</h1>
-    </div>
+    <div class="row"> 
+      <div class="col-4" id="playeroneside">
+        <div>
+          <h1>Player One!</h1>
+          <h5 class="player1round">Player One Round</h1>
+        </div>  
+      </div>
+      <div class="col-4" id="middleground">
+        <div>
+          <button type="submit" id="roll">Roll the dice</button>
+          <button type="submit" id="hold">hold what you got</button>
+          <h1>Player One's Total</h1>
+          <h5 class="player1total">Player One Total</h1>
+          <h1>Player Two's Total</h1>
+          <h5 class="player2total">Player Two Total</h1>
+          <p class="winner">And the winner is!</p>
+        </div>  
+      </div>
+      <div class="col-4" id="playertwoside">
+        <div>
+          <h1>Player Two!</h1>
+          <h5 class="player2round">Player Two Round</h1>
+        </div>  
+      </div>             
   </div>
 </body>
 </html>
