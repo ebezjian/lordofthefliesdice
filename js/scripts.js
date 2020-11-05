@@ -55,13 +55,25 @@ function declareWinner(element) {
 }
 
 
+
 $(document).ready(function() {
   $("button#roll").click(function(event) {
     event.preventDefault();
-    console.log("hello");
+    $(".player1total").text(playerOne.totalScore);
+    $(".player1round").text(playerOne.roundScore);
+    $(".player2total").text(playerTwo.totalScore);
+    $(".player2round").text(playerTwo.roundScore);
     turnTest();
-    $(".player1score").text(playerOne.roundScore, playerOne.totalScore);
-    $(".player2score").text(playerTwo.roundScore, playerTwo.totalScore);
+    });
+  $("button#hold").click(function(event) {
+    event.preventDefault();
+    if (isPlayerOne === true) {
+      playerOne.hold = true;
+      playerOne.holdDice();
+    } else {
+      playerTwo.hold = true;
+      playerTwo.holdDice();
+    }
   });
 });
 
